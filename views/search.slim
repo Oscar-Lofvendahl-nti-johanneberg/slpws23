@@ -1,0 +1,13 @@
+h1 Search after game
+form method="get" action="/search"
+  label
+    | Keyword:
+    input type="text" name="query"
+  input type="submit" value="search"
+
+- if @games.any?
+  ul
+    - @games.each do |game|
+      li= game.title
+- else
+  | No results were found

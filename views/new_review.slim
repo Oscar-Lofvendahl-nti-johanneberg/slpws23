@@ -1,0 +1,14 @@
+h1 Write your review here
+form method="post" action="/reviews"
+  label
+    | Choose game:
+    select name="game_id"
+      - @games.each do |game|
+        option value=game.id= game.title
+  label
+    | Titel:
+    input type="text" name="review[title]"
+  label
+    | Review:
+    textarea name="review[body]"
+  input type="submit" value="Send"
