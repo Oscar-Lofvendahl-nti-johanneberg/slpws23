@@ -1,0 +1,11 @@
+h1 Edit
+
+- @edit.each do |update|
+form action="/games/#{update['gameid']}/update" method="post"
+    input type="text" name="title" value="#{update['title']}"
+    input type="text" name="description" value="#{update['description']}"
+    input type="text" name="genre" value="#{update['genre']}"
+    input type="text" name="format" value="#{update['format']}"
+    input type="text" name="rating" value="#{update['rating']}"
+    input type="hidden" name="userid" value="#{update['userid']}"
+    input type="submit" value="Edit it!"

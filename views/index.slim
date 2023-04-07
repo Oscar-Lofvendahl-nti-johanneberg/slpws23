@@ -1,0 +1,9 @@
+h1 All reviews
+
+ol
+  - @games.each do |game|
+    li 
+      a href="games/#{game['gameid']}" #{game["title"]} #{game["genre"]} #{game["format"]} #{game["rating"]}
+      a href="games/#{game['gameid']}/edit" Update
+      form method="POST" action="games/#{game['gameid']}/delete"
+        input type="submit" value="Delete"
