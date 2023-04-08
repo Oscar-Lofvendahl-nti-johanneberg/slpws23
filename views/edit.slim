@@ -1,11 +1,44 @@
 h1 Edit
 
-- @edit.each do |update|
-form action="/games/#{update['gameid']}/update" method="post"
-    input type="text" name="title" value="#{update['title']}"
-    input type="text" name="description" value="#{update['description']}"
-    input type="text" name="genre" value="#{update['genre']}"
-    input type="text" name="format" value="#{update['format']}"
-    input type="text" name="rating" value="#{update['rating']}"
-    input type="hidden" name="userid" value="#{update['userid']}"
+form action="/games/#{@edit['gameid']}/update" method="post"
+    input type="text" name="title" value="#{@edit['title']}"
+    input type="text" name="description" value="#{@edit['description']}" rows="5" cols="50"
+
+    select type="text" name="genre" value="#{@edit['genre']}"
+        option value="" Choose genre
+        option value="Action" Action
+        option value="Adventure" Adventure
+        option value="Casual" Casual
+        option value="FPS" FPS
+        option value="Indie" Indie
+        option value="MOBA" MOBA
+        option value="Sports" Sports
+        option value="Simulation" Simulation
+        option value="Strategy" Strategy
+        option value="Sandbox" Sandbox
+        option value="Racing" Racing
+        option value="RPG" RPG
+        option value="RTS" RTS 
+
+    select type="text" name="format" value="#{@edit['format']}"
+        option value="" Enter format
+        option value="Nintendo Switch" Nintendo Switch
+        option value="Mobile" Mobile
+        option value="PC" PC 
+        option value="Playstation" Playstation
+        option value="Wii" Wii
+        option value="Xbox" Xbox
+
+    select type="number" name="rating" value="#{@edit['rating']}"
+        option value="" place rating
+        option value="10" 10
+        option value="9" 9
+        option value="8" 8
+        option value="7" 7
+        option value="6" 6
+        option value="5" 5
+        option value="4" 4
+        option value="3" 3
+        option value="2" 2
+        option value="1" 1
     input type="submit" value="Edit it!"

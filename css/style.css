@@ -1,0 +1,8 @@
+.notice {
+background:rgba(249, 3, 3, 0.597);
+width:60vw;
+padding:50px;
+position:fixed;
+font-size:4rem;
+font-family:Arial, Arial, Helvetica, sans-serif;
+}

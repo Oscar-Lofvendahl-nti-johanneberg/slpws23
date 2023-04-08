@@ -1,9 +1,46 @@
 h1 Create review 
-form action="/games/new" method="get"
+form action="/games/new" method="post"
     input type="text" id="title" name="title" placeholder="Enter title"
-    input type="text" id="description" name="description" placeholder="Write review here"
-    input type="text" id="genre" name="genre" placeholder="Enter genre"
-    input type="text" id="format" name="format" placeholder="Enter format"
-    input type="text" id="rating" name="rating" min="1" max="10" placeholder="Enter rating"
-    input type="text" id="userid" name="userid" placeholder="Enter id for user"
+    textarea type="text" id="description" name="description" placeholder="Write review here" rows="5" cols="50"
+
+    select id="genre" name="genre"
+        option value="" Choose genre
+        option value="Action" Action
+        option value="Adventure" Adventure
+        option value="Casual" Casual
+        option value="FPS" FPS
+        option value="Indie" Indie
+        option value="MOBA" MOBA
+        option value="Sports" Sports
+        option value="Simulation" Simulation
+        option value="Strategy" Strategy
+        option value="Sandbox" Sandbox
+        option value="Racing" Racing
+        option value="RPG" RPG
+        option value="RTS" RTS 
+
+
+    select type="text" id="format" name="format"
+        option value="" Enter format
+        option value="Nintendo Switch" Nintendo Switch
+        option value="Mobile" Mobile
+        option value="PC" PC 
+        option value="Playstation" Playstation
+        option value="Wii" Wii
+        option value="Xbox" Xbox
+
+    Select type="number" id="rating" name="rating"
+        option value="" place rating
+        option value="10" 10
+        option value="9" 9
+        option value="8" 8
+        option value="7" 7
+        option value="6" 6
+        option value="5" 5
+        option value="4" 4
+        option value="3" 3
+        option value="2" 2
+        option value="1" 1
+        
+    input type="hidden" id="userid" name="userid"
     input type="submit" value="Submit" 

@@ -2,8 +2,9 @@
 html lang="en"
   head
     meta charset="UTF-8"/
+    meta http-equiv="X-UA-Compatible" content="IE=edge"/
     meta name="viewport" content="width=device-width, initial-scale=1.0"/
-    link rel="stylesheet" href="/css/style.css"/
+    link rel="stylesheet" href="css/style.css"/
     title Games2Play
   body
     nav
@@ -14,7 +15,7 @@ html lang="en"
           a href="/games" Show all reviews 
         li
           a href="/games/new" Create review
-        - if session[:id] != nil
+        - if session[:userid] != nil
           li
             a href="/logout" Logout 
         - else
@@ -22,5 +23,9 @@ html lang="en"
             a href="/login" Login
           li 
             a href="/register" Register
-    main
-      == yield
+    
+    - if flash[:notice]
+        p.notice = flash[:notice]
+    main  
+  == yield
+  script src="js/main.js"/
