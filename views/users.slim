@@ -1,0 +1,17 @@
+h1 Users 
+
+table
+  thead
+    tr
+      th ID
+      th Username
+      th Action
+  tbody
+    - @users.each do |user|
+      tr
+        td = user["userid"]
+        td = user["username"]
+        td
+          form method="post" action="/users/#{user['userid']}/delete" 
+            input onsubmit="return confirm('Are you sure you want to delete this user?')" 
+              button.btn.btn-danger type="submit" value="Delete"
